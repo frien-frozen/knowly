@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import Header from '@/components/Header';
 
 import BentoGrid from '@/components/BentoGrid';
@@ -11,7 +12,26 @@ import { useLanguage } from '@/context/LanguageContext';
 import { Search, Sparkles } from 'lucide-react';
 
 export default function Home() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const [searchQuery, setSearchQuery] = React.useState('');
+
+  // Handle search submission
+  const handleSearch = () => {
+    if (searchQuery.trim()) {
+      const query = encodeURIComponent(searchQuery.trim());
+      window.location.href = `https://learn.knowly.uz/search?q=${query}&lang=${language}`;
+    } else {
+      // If empty, just redirect to app homepage
+      window.location.href = `https://learn.knowly.uz/?lang=${language}`;
+    }
+  };
+
+  // Handle Enter key press
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
+  };
 
   return (
     <main className="min-h-screen bg-[#F2F4F7] font-nunito overflow-x-hidden selection:bg-red-200">
@@ -54,9 +74,15 @@ export default function Home() {
                 key={t.hero.searchPlaceholder}
                 type="text"
                 placeholder={t.hero.searchPlaceholder}
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                onKeyDown={handleKeyDown}
                 className="w-full px-4 py-4 text-lg font-bold text-gray-700 placeholder-gray-400 outline-none bg-transparent rounded-full"
               />
-              <button className="bg-[#D92D20] text-white px-8 py-4 rounded-full font-extrabold hover:bg-red-700 transition-colors shadow-lg shadow-red-200">
+              <button
+                onClick={handleSearch}
+                className="bg-[#D92D20] text-white px-8 py-4 rounded-full font-extrabold hover:bg-red-700 transition-colors shadow-lg shadow-red-200"
+              >
                 <SmoothText>{t.hero.searchButton}</SmoothText>
               </button>
             </div>

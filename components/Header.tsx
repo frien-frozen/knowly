@@ -7,6 +7,11 @@ import { useLanguage } from '@/context/LanguageContext';
 export default function Header() {
     const { t, language, toggleLanguage } = useLanguage();
 
+    // Handle Get Started button click
+    const handleGetStarted = () => {
+        window.location.href = `https://learn.knowly.uz/?lang=${language}`;
+    };
+
     return (
         <header className="fixed top-0 left-0 right-0 z-50 h-24 bg-white/90 backdrop-blur-lg border-b border-gray-100">
             <div className="w-full max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
@@ -49,7 +54,10 @@ export default function Header() {
                     </button>
 
                     {/* CTA Button */}
-                    <button className="bg-[#FDB022] text-[#7B2D08] px-6 py-3 rounded-2xl font-extrabold hover:bg-[#F59E0B] transition-all border-b-4 border-[#D97706] active:border-b-0 active:translate-y-1">
+                    <button
+                        onClick={handleGetStarted}
+                        className="bg-[#FDB022] text-[#7B2D08] px-6 py-3 rounded-2xl font-extrabold hover:bg-[#F59E0B] transition-all border-b-4 border-[#D97706] active:border-b-0 active:translate-y-1"
+                    >
                         {t.header.getStarted}
                     </button>
 
