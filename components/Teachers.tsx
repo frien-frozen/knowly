@@ -5,7 +5,7 @@ import { Brain, Sparkles, Users, ArrowRight, Zap } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
 export default function Teachers() {
-    const { t } = useLanguage();
+    const { t, language } = useLanguage();
 
     return (
         <section id="teachers" className="py-24 bg-[#F2F4F7] relative overflow-hidden">
@@ -90,7 +90,7 @@ export default function Teachers() {
                             </p>
                         </div>
 
-                        <a href="https://teacher.knowly.uz" className="flex-shrink-0 group relative inline-flex items-center gap-3 bg-[#D92D20] text-white pl-8 pr-6 py-4 rounded-2xl font-extrabold hover:bg-red-600 transition-all shadow-lg shadow-red-900/50">
+                        <a href={`https://teacher.knowly.uz/?lang=${language}`} className="flex-shrink-0 group relative inline-flex items-center gap-3 bg-[#D92D20] text-white pl-8 pr-6 py-4 rounded-2xl font-extrabold hover:bg-red-600 transition-all shadow-lg shadow-red-900/50">
                             <span>{t.teachers.banner.button}</span>
                             <div className="bg-white/20 p-2 rounded-xl group-hover:translate-x-1 transition-transform">
                                 <ArrowRight className="w-5 h-5" />
