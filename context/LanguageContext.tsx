@@ -22,16 +22,12 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
     // 1. Initialize state based on URL, default to 'uz'
     const [language, setLanguage] = useState<Language>(() => {
-        // We can't access searchParams during server rendering, but in useEffect we can.
-        // However, for useState initial value in Client Components, it runs on client.
-        // Let's rely on the useEffect for the initial sync if needed, or better:
-        // Try to get it if possible, but default to 'uz'.
         if (typeof window !== 'undefined') {
             const params = new URLSearchParams(window.location.search);
             const lang = params.get('lang');
-            return lang === 'en' ? 'en' : 'uz';
+            return lang === 'uz' ? 'uz' : 'en';
         }
-        return 'uz';
+        return 'en';
     });
 
     // 2. Sync State with URL when URL changes manually
@@ -42,12 +38,23 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
         }
     }, [searchParams]);
 
+    // 3. On first load, if ?lang= is absent, redirect to add it
+    useEffect(() => {
+        const param = searchParams.get('lang');
+        if (!param) {
+            const params = new URLSearchParams(searchParams.toString());
+            params.set('lang', language);
+            router.replace(`${pathname}?${params.toString()}`, { scroll: false });
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []); // intentionally runs once on mount
+
     const toggleLanguage = () => {
         const newLang = language === 'uz' ? 'en' : 'uz';
         setLanguage(newLang);
 
-        // 3. Update URL without full reload
-        const params = new URLSearchParams(searchParams.toString()); // Fix: Pass string or use existing structure
+        // 4. Update URL without full reload
+        const params = new URLSearchParams(searchParams.toString());
         params.set('lang', newLang);
         router.replace(`${pathname}?${params.toString()}`, { scroll: false });
     };
