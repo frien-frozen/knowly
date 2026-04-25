@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://knowly.uz/sitemap.xml',
+    sitemap: 'https://www.knowly.uz/sitemap.xml',
   };
 }

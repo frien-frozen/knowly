@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = 'https://knowly.uz';
+  const base = 'https://www.knowly.uz';
 
   return [
     {

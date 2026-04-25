@@ -29,15 +29,15 @@ export const metadata: Metadata = {
     "maktab o'quvchilari", "biologiya", "fizika", "kimyo", "matematika",
     "ingliz tili", "online school uzbekistan"
   ],
-  metadataBase: new URL("https://knowly.uz"),
+  metadataBase: new URL("https://www.knowly.uz"),
   alternates: {
-    canonical: "https://knowly.uz",
+    canonical: "https://www.knowly.uz",
   },
   openGraph: {
     title: "Knowly | Bepul Cambridge & Pearson Ta'lim",
     description:
       "O'zbekiston o'quvchilari uchun bepul Cambridge IGCSE, A-Levels va Pearson Edexcel video darslari. Murakkab bilimlar — ona tilida.",
-    url: "https://knowly.uz",
+    url: "https://www.knowly.uz",
     siteName: "Knowly",
     locale: "uz_UZ",
     type: "website",
@@ -75,12 +75,12 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://knowly.uz/#organization",
+      "@id": "https://www.knowly.uz/#organization",
       name: "Knowly",
-      url: "https://knowly.uz",
+      url: "https://www.knowly.uz",
       logo: {
         "@type": "ImageObject",
-        url: "https://knowly.uz/logos/kn-icon.png",
+        url: "https://www.knowly.uz/logos/kn-icon.png",
       },
       sameAs: [],
       description:
@@ -88,10 +88,10 @@ const jsonLd = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://knowly.uz/#website",
-      url: "https://knowly.uz",
+      "@id": "https://www.knowly.uz/#website",
+      url: "https://www.knowly.uz",
       name: "Knowly",
-      publisher: { "@id": "https://knowly.uz/#organization" },
+      publisher: { "@id": "https://www.knowly.uz/#organization" },
       potentialAction: {
         "@type": "SearchAction",
         target: {
@@ -103,11 +103,11 @@ const jsonLd = {
     },
     {
       "@type": "WebPage",
-      "@id": "https://knowly.uz/#webpage",
-      url: "https://knowly.uz",
+      "@id": "https://www.knowly.uz/#webpage",
+      url: "https://www.knowly.uz",
       name: "Knowly | Bepul Cambridge & Pearson Ta'lim — O'zbekiston",
-      isPartOf: { "@id": "https://knowly.uz/#website" },
-      about: { "@id": "https://knowly.uz/#organization" },
+      isPartOf: { "@id": "https://www.knowly.uz/#website" },
+      about: { "@id": "https://www.knowly.uz/#organization" },
       description:
         "Bepul Cambridge IGCSE, A-Levels va Pearson Edexcel ta'limi. O'zbekiston o'quvchilari uchun ona tilida video darslar.",
     },
