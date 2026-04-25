@@ -6,6 +6,7 @@ export const translations = {
             teachers: "Ustozlar",
             getStarted: "Boshlash",
             languageName: "O'zbek",
+            becomeTeacher: "Ustoz bo'ling",
         },
         hero: {
             badge: "O'zbekiston uchun Bepul Ta'lim",
@@ -94,13 +95,20 @@ export const translations = {
         },
         footer: {
             tagline: "Global ta'lim standartlari va mahalliy salohiyatni bog'lovchi ko'prik. O'zbek xalqi uchun mehr ustiga qurilgan.",
-            sectionPlatform: "Platforma",
+            sectionPlatform: "O'rganish",
+            sectionTeachers: "Ustozlar Uchun",
             sectionContact: "Bog'lanish",
             links: {
-                curriculums: "Yo'nalishlar",
-                teachers: "Ustozlar Uchun",
-                mission: "Missiya",
-                stories: "Muvaffaqiyat Hikoyalari"
+                startLearning: "Dars Boshlash",
+                igcse: "Cambridge IGCSE",
+                alevels: "A-Levels",
+                pearson: "Pearson Edexcel",
+                secondary: "Lower Secondary",
+                mission: "Missiyamiz",
+            },
+            teacherLinks: {
+                apply: "Ustoz Bo'lish",
+                login: "Ustoz Login",
             },
             contactLabels: {
                 call: "Qo'ng'iroq Qiling",
@@ -119,6 +127,7 @@ export const translations = {
             teachers: "Teachers",
             getStarted: "Get Started",
             languageName: "English",
+            becomeTeacher: "Teach on Knowly",
         },
         hero: {
             badge: "Free Education for Uzbekistan",
@@ -207,13 +216,20 @@ export const translations = {
         },
         footer: {
             tagline: "Bridging the gap between global education standards and local potential. Made with ❤️ in Uzbekistan.",
-            sectionPlatform: "Platform",
+            sectionPlatform: "Learn",
+            sectionTeachers: "For Teachers",
             sectionContact: "Contact Us",
             links: {
-                curriculums: "Curriculums",
-                teachers: "For Teachers",
+                startLearning: "Start Learning",
+                igcse: "Cambridge IGCSE",
+                alevels: "A-Levels",
+                pearson: "Pearson Edexcel",
+                secondary: "Lower Secondary",
                 mission: "Our Mission",
-                stories: "Success Stories"
+            },
+            teacherLinks: {
+                apply: "Apply as Teacher",
+                login: "Teacher Login",
             },
             contactLabels: {
                 call: "Call Us",
