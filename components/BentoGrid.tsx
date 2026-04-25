@@ -6,7 +6,8 @@ import { useLanguage } from '@/context/LanguageContext';
 import SmoothText from '@/components/ui/SmoothText';
 
 export default function BentoGrid() {
-    const { t } = useLanguage();
+    const { t, language } = useLanguage();
+    const search = (q: string) => `https://learn.knowly.uz/search?q=${encodeURIComponent(q)}&lang=${language}`;
 
     return (
         <section id="curriculums" className="py-32 bg-[#F2F4F7]">
@@ -19,11 +20,10 @@ export default function BentoGrid() {
                     <p className="text-xl text-gray-500 font-medium"><SmoothText>{t.bento.subheading}</SmoothText></p>
                 </div>
 
-                {/* RESTORED 12-COLUMN CANDY GRID */}
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[minmax(280px,auto)]">
 
-                    {/* CARD 1: IGCSE (Big Red) - Spans 7 cols */}
-                    <div className="md:col-span-7 group relative overflow-hidden bg-[#D92D20] rounded-[2.5rem] p-10 text-white shadow-xl shadow-red-200 border-b-8 border-[#991B1B] hover:-translate-y-2 transition-transform duration-300">
+                    {/* CARD 1: IGCSE */}
+                    <a href={search('Cambridge IGCSE')} className="md:col-span-7 group relative overflow-hidden bg-[#D92D20] rounded-[2.5rem] p-10 text-white shadow-xl shadow-red-200 border-b-8 border-[#991B1B] hover:-translate-y-2 transition-transform duration-300">
                         <div className="relative z-10 flex flex-col h-full justify-between">
                             <div className="flex justify-between items-start">
                                 <div className="bg-white/20 p-4 rounded-2xl backdrop-blur-sm">
@@ -42,12 +42,11 @@ export default function BentoGrid() {
                                 <span><SmoothText>{t.bento.cards.igcse.subjects}</SmoothText></span>
                             </div>
                         </div>
-                        {/* Background Decoration */}
                         <GraduationCap className="absolute -bottom-10 -right-10 w-64 h-64 text-white opacity-10 rotate-12 group-hover:rotate-6 transition-transform duration-500" />
-                    </div>
+                    </a>
 
-                    {/* CARD 2: A-LEVELS (Tall White) - Spans 5 cols */}
-                    <div className="md:col-span-5 bg-white rounded-[2.5rem] p-10 text-[#101828] shadow-xl shadow-gray-200 border-b-8 border-gray-200 hover:-translate-y-2 transition-transform duration-300 flex flex-col justify-between">
+                    {/* CARD 2: A-LEVELS */}
+                    <a href={search('A-Levels')} className="md:col-span-5 bg-white rounded-[2.5rem] p-10 text-[#101828] shadow-xl shadow-gray-200 border-b-8 border-gray-200 hover:-translate-y-2 transition-transform duration-300 flex flex-col justify-between">
                         <div className="flex justify-between items-start">
                             <div className="bg-red-50 p-4 rounded-2xl">
                                 <Trophy className="w-8 h-8 text-[#D92D20]" />
@@ -64,10 +63,10 @@ export default function BentoGrid() {
                             <div className="bg-[#D92D20] h-full w-3/4 rounded-full"></div>
                         </div>
                         <p className="text-xs text-gray-400 mt-2 font-bold text-right"><SmoothText>{t.bento.cards.alevel.progress}</SmoothText></p>
-                    </div>
+                    </a>
 
-                    {/* CARD 3: PEARSON (Wide White) - Spans 5 cols */}
-                    <div className="md:col-span-5 bg-white rounded-[2.5rem] p-10 text-[#101828] shadow-xl shadow-gray-200 border-b-8 border-gray-200 hover:-translate-y-2 transition-transform duration-300 flex flex-col justify-between">
+                    {/* CARD 3: PEARSON */}
+                    <a href={search('Pearson Edexcel')} className="md:col-span-5 bg-white rounded-[2.5rem] p-10 text-[#101828] shadow-xl shadow-gray-200 border-b-8 border-gray-200 hover:-translate-y-2 transition-transform duration-300 flex flex-col justify-between">
                         <div>
                             <div className="bg-yellow-50 p-4 rounded-2xl w-fit mb-6">
                                 <Star className="w-8 h-8 text-[#FDB022]" />
@@ -78,10 +77,10 @@ export default function BentoGrid() {
                         <div className="flex items-center gap-2 text-gray-400 font-bold">
                             <span>🇬🇧 <SmoothText>{t.bento.cards.pearson.location}</SmoothText></span>
                         </div>
-                    </div>
+                    </a>
 
-                    {/* CARD 4: LOWER SECONDARY (Wide Yellow) - Spans 7 cols */}
-                    <div className="md:col-span-7 bg-[#FDB022] rounded-[2.5rem] p-10 text-[#7B2D08] shadow-xl shadow-yellow-200 border-b-8 border-[#B54708] hover:-translate-y-2 transition-transform duration-300 flex flex-col justify-between">
+                    {/* CARD 4: LOWER SECONDARY */}
+                    <a href={search('Lower Secondary')} className="md:col-span-7 bg-[#FDB022] rounded-[2.5rem] p-10 text-[#7B2D08] shadow-xl shadow-yellow-200 border-b-8 border-[#B54708] hover:-translate-y-2 transition-transform duration-300 flex flex-col justify-between">
                         <div className="flex justify-between items-start">
                             <div className="bg-white/30 p-4 rounded-2xl backdrop-blur-sm">
                                 <BookOpen className="w-8 h-8 text-[#7B2D08]" />
@@ -91,10 +90,10 @@ export default function BentoGrid() {
                             <h3 className="text-3xl font-extrabold mb-3"><SmoothText>{t.bento.cards.secondary.title}</SmoothText></h3>
                             <p className="text-[#7B2D08]/80 font-medium text-lg"><SmoothText>{t.bento.cards.secondary.desc}</SmoothText></p>
                         </div>
-                        <button className="mt-6 w-fit bg-white text-[#7B2D08] px-6 py-3 rounded-xl font-extrabold hover:bg-opacity-90 transition-all">
+                        <span className="mt-6 w-fit bg-white text-[#7B2D08] px-6 py-3 rounded-xl font-extrabold">
                             <SmoothText>{t.bento.cards.secondary.button}</SmoothText>
-                        </button>
-                    </div>
+                        </span>
+                    </a>
 
                 </div>
             </div>
