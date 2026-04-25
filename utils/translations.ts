@@ -109,6 +109,7 @@ export const translations = {
             teacherLinks: {
                 apply: "Ustoz Bo'lish",
                 login: "Ustoz Login",
+                meetTeachers: "Ustozlar Bilan Tanishing",
             },
             contactLabels: {
                 call: "Qo'ng'iroq Qiling",
@@ -230,6 +231,7 @@ export const translations = {
             teacherLinks: {
                 apply: "Apply as Teacher",
                 login: "Teacher Login",
+                meetTeachers: "Meet Our Teachers",
             },
             contactLabels: {
                 call: "Call Us",

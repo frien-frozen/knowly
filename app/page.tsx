@@ -38,7 +38,7 @@ export default function Home() {
       <Header />
 
       {/* HERO SECTION - Centered & Gradient */}
-      <section className="relative pt-56 pb-32 px-6 overflow-hidden">
+      <section className="relative pt-28 sm:pt-44 md:pt-56 pb-16 sm:pb-24 md:pb-32 px-4 sm:px-6 overflow-hidden">
         {/* Background Blob */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-red-200/30 rounded-full blur-3xl -z-10 animate-pulse"></div>
 
@@ -51,7 +51,7 @@ export default function Home() {
           </div>
 
           {/* Headlines - 3D Logo Effect in Text */}
-          <h1 className="text-6xl md:text-8xl font-extrabold text-[#101828] mb-6 tracking-tight leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold text-[#101828] mb-4 sm:mb-6 tracking-tight leading-tight">
             <SmoothText>{t.hero.titleMain}</SmoothText> <br />
             <span className="relative inline-block text-[#D92D20] drop-shadow-sm">
               <SmoothText>{t.hero.titleAccent}</SmoothText>
@@ -61,15 +61,15 @@ export default function Home() {
             </span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-gray-500 max-w-2xl mb-12 leading-relaxed">
+          <p className="text-base sm:text-xl md:text-2xl text-gray-500 max-w-2xl mb-8 sm:mb-12 leading-relaxed px-2 sm:px-0">
             <SmoothText>{t.hero.subtitle}</SmoothText>
           </p>
 
           {/* Search Bar - Bouncy & Functional */}
           <div className="relative w-full max-w-2xl group">
             <div className="absolute inset-0 bg-red-200 rounded-full blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
-            <div className="relative flex items-center bg-white p-2 rounded-full shadow-2xl shadow-gray-200/50 border-2 border-gray-100 focus-within:border-[#D92D20] transition-all transform hover:-translate-y-1">
-              <Search className="w-6 h-6 text-gray-400 ml-6" />
+            <div className="relative flex items-center bg-white p-1.5 sm:p-2 rounded-full shadow-2xl shadow-gray-200/50 border-2 border-gray-100 focus-within:border-[#D92D20] transition-all transform hover:-translate-y-1">
+              <Search className="w-5 h-5 sm:w-6 sm:h-6 text-gray-400 ml-4 sm:ml-6 shrink-0" />
               <input
                 key={t.hero.searchPlaceholder}
                 type="text"
@@ -77,11 +77,11 @@ export default function Home() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 onKeyDown={handleKeyDown}
-                className="w-full px-4 py-4 text-lg font-bold text-gray-700 placeholder-gray-400 outline-none bg-transparent rounded-full"
+                className="w-full px-3 sm:px-4 py-3 sm:py-4 text-sm sm:text-base font-bold text-gray-700 placeholder-gray-400 outline-none bg-transparent rounded-full"
               />
               <button
                 onClick={handleSearch}
-                className="bg-[#D92D20] text-white px-8 py-4 rounded-full font-extrabold hover:bg-red-700 transition-colors shadow-lg shadow-red-200"
+                className="bg-[#D92D20] text-white px-4 sm:px-8 py-3 sm:py-4 rounded-full font-extrabold hover:bg-red-700 transition-colors shadow-lg shadow-red-200 text-sm sm:text-base shrink-0"
               >
                 <SmoothText>{t.hero.searchButton}</SmoothText>
               </button>

@@ -99,7 +99,7 @@ export default function Footer() {
                             </li>
                             <li>
                                 <a href="/#teachers" className="hover:text-[#FDB022] transition-colors">
-                                    {t.footer.sectionTeachers}
+                                    {t.footer.teacherLinks.meetTeachers}
                                 </a>
                             </li>
                         </ul>
@@ -145,8 +145,8 @@ export default function Footer() {
                 <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
                     <p>{t.footer.copyright}</p>
                     <div className="flex gap-6">
-                        <a href={`${teachBase}/privacy`} className="hover:text-white">{t.footer.privacy}</a>
-                        <a href={`${teachBase}/terms`} className="hover:text-white">{t.footer.terms}</a>
+                        <a href="/privacy" className="hover:text-white">{t.footer.privacy}</a>
+                        <a href="/terms" className="hover:text-white">{t.footer.terms}</a>
                     </div>
                 </div>
             </div>
